@@ -23,8 +23,11 @@ public class Operaciones implements Calculos{
         System.out.println("Ingrese el segundo numero: ");
        num2 = teclado.nextInt();
             if (num2 > maximo || num2 < minimo) {
-
-                throw new DesbordaCapacidadExcepcion("El numero ingresado desborda la capacidad de esta calculadora");
+                try {
+                    throw new DesbordaCapacidadExcepcion("El numero ingresado desborda la capacidad de esta calculadora");
+                }catch (DesbordaCapacidadExcepcion e){
+                    System.out.println(e.getMessage());
+                }
             }
 
     }
